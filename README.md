@@ -15,9 +15,10 @@ For a quick and easy installation of `mltools`, perform the following steps:
     ```
 2. Execute:
     ```
+    conda activate mltools
     ~$ python setup.py
     ```
     This adds to the site packages the directory containing the mltools.py
-3. `import mltools` and enjoy!
+3. Use the `mltools` kernel on your notebook then `import mltools`! Enjoy!
 
 All of `mltools.py` functionalities can now be used on your project. Remember to update the `mltools` repository once in a while for possible new features!
