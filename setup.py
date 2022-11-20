@@ -26,10 +26,4 @@ mltools_pth = site_packages_dir + '/mltools.pth'
 # Add to site-packages dir the path of skils
 with open(mltools_pth, 'w') as f:
     f.write(cur_dir)
-print(f"Added {mltools_pth} on {site_packages_dir}") 
-
-# Install required packages
-print("Installing required packages:\n")
-with open('requirements.txt', 'r') as f:
-    for package in f.readlines():
-        install(package)
+print(f"Added {mltools_pth} on {site_packages_dir}")
