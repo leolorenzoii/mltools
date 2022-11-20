@@ -12,7 +12,7 @@ import seaborn as sns
 from matplotlib.offsetbox import AnchoredText
 import matplotlib.ticker as ticker
 from IPython.display import HTML, display
-from tqdm.autonotebook import tqdm
+from tqdm import tqdm
 import warnings
 from sklearn.exceptions import ConvergenceWarning
 import time
@@ -659,7 +659,7 @@ class MLModels:
             # Perform smote
             if smote:
                 smt = SMOTE(random_state=self.random_state)
-                X_train, y_train = smt.fit_sample(X_train, y_train)
+                X_train, y_train = smt.fit_resample(X_train, y_train)
             
             # Set description of progress bar
             pb.set_description(f'Iter: {i + 1}')
@@ -1129,8 +1129,10 @@ class MLModels:
         # Iterate through all features and axes
         for ax, feature in zip(axes.flatten(), features):
             # Get partial dependence values
-            ave_predictions, values = partial_dependence(
-                    est, X_data, feature, grid_resolution=20)
+            res_pd = partial_dependence(
+                est, X_data, feature, grid_resolution=20)
+            ave_predictions = res_pd['average']
+            values = res_pd['values']
 
             # Check if len of feature is 1
             if isinstance(feature, str):
