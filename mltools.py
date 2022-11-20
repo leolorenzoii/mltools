@@ -427,7 +427,7 @@ class MLModels:
                     lw=3.0, markersize=7.0, alpha=0.80)
 
         # Adjust y lim depending on min and max values
-        if np.sign(max_coef*min_coef) > 0:
+        if np.sign(max_coef*min_coef) >= 0:
             ylim = max_coef*1.01
         else:
             ylim = min(np.abs([min_coef, max_coef]))*1.05
