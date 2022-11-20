@@ -9,10 +9,15 @@ Please check the `recipe-book.ipynb` or `recipe-book.html` for a sample usage of
 For a quick and easy installation of `mltools`, perform the following steps:
 
 1. Clone the `mltools` project on any local directory.
+2. Create the `mltools` conda environment
+    ```
+    conda env create -f environment.yml
+    ```
 2. Execute:
     ```
     ~$ python setup.py
     ```
+    This adds to the site packages the directory containing the mltools.py
 3. `import mltools` and enjoy!
 
 All of `mltools.py` functionalities can now be used on your project. Remember to update the `mltools` repository once in a while for possible new features!
